@@ -1,12 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Print'
+description: 'Print the file'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  file:  
+    description: 'file to print'
     required: true
-    default: 'World'
+
 outputs:
-  time: # id of output
+  file_name: 
     description: 'The time we greeted you'
 runs:
   using: 'node20'
