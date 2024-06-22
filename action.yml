@@ -15,6 +15,15 @@ inputs:
     description: 'Hashnode Secret Token'
     required: true
 
+  added_files:
+    description: 'The files which have been added'
+
+  modified_files:
+    description: 'The files which have been modified'
+
+  deleted_files:
+    description: 'The files which have been deleted'
+    
 outputs:
   file_name: 
     description: 'Path of the files'

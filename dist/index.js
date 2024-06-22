@@ -36262,13 +36262,20 @@ const matter = __nccwpck_require__(1774)
 
 async function run () {
    try {
-      const hashnode_token = core.getInput("hashnode_token")
       const github_token = core.getInput("github_token")
-      const octokit = github.getOctokit(github_token)
+      const hashnode_token = core.getInput("hashnode_token")
+      core.setOutput("hashnode_token", hashnode_token)
 
-      // const payload = JSON.stringify(github.context.payload, null, 2)
-      // console.log(payload)
+      const added_files = core.getInput("added_files")
+      const modified_files = core.getInput("modified_files")
+      const deleted_files = core.getInput("deleted_files")
 
+      console.log({
+        added_files,
+        modified_files,
+        deleted_files
+      })
+      
     } catch (error) {
       core.setFailed(error.message);
     }
