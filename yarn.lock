@@ -110,7 +110,7 @@
     "@octokit/request-error" "^6.0.1"
     "@octokit/types" "^13.0.0"
 
-"@octokit/core@^5.0.1", "@octokit/core@5":
+"@octokit/core@^5.0.1":
   version "5.2.0"
   resolved "https://registry.npmjs.org/@octokit/core/-/core-5.2.0.tgz"
   integrity sha512-1LFfa/qnMQvEOAdzlQymH0ulepxbxnCYAKJZfMci/5XJyIHWgEYnDmgnKakbTh7CH2tFQ5O60oYDvns4i9RAIg==
@@ -123,20 +123,7 @@
     before-after-hook "^2.2.0"
     universal-user-agent "^6.0.0"
 
-"@octokit/core@^6.0.0", "@octokit/core@>=6":
-  version "6.1.2"
-  resolved "https://registry.npmjs.org/@octokit/core/-/core-6.1.2.tgz"
-  integrity sha512-hEb7Ma4cGJGEUNOAVmyfdB/3WirWMg5hDuNFVejGEDFqupeOysLc2sG6HJxY2etBp5YQu5Wtxwi020jS9xlUwg==
-  dependencies:
-    "@octokit/auth-token" "^5.0.0"
-    "@octokit/graphql" "^8.0.0"
-    "@octokit/request" "^9.0.0"
-    "@octokit/request-error" "^6.0.1"
-    "@octokit/types" "^13.0.0"
-    before-after-hook "^3.0.2"
-    universal-user-agent "^7.0.0"
-
-"@octokit/core@^6.1.2", "@octokit/core@>=6":
+"@octokit/core@^6.0.0", "@octokit/core@^6.1.2":
   version "6.1.2"
   resolved "https://registry.npmjs.org/@octokit/core/-/core-6.1.2.tgz"
   integrity sha512-hEb7Ma4cGJGEUNOAVmyfdB/3WirWMg5hDuNFVejGEDFqupeOysLc2sG6HJxY2etBp5YQu5Wtxwi020jS9xlUwg==
@@ -308,37 +295,7 @@
     "@octokit/types" "^13.1.0"
     universal-user-agent "^6.0.0"
 
-"@octokit/request@^9.0.0":
-  version "9.1.1"
-  resolved "https://registry.npmjs.org/@octokit/request/-/request-9.1.1.tgz"
-  integrity sha512-pyAguc0p+f+GbQho0uNetNQMmLG1e80WjkIaqqgUkihqUp0boRU6nKItXO4VWnr+nbZiLGEyy4TeKRwqaLvYgw==
-  dependencies:
-    "@octokit/endpoint" "^10.0.0"
-    "@octokit/request-error" "^6.0.1"
-    "@octokit/types" "^13.1.0"
-    universal-user-agent "^7.0.2"
-
-"@octokit/request@^9.0.1":
-  version "9.1.1"
-  resolved "https://registry.npmjs.org/@octokit/request/-/request-9.1.1.tgz"
-  integrity sha512-pyAguc0p+f+GbQho0uNetNQMmLG1e80WjkIaqqgUkihqUp0boRU6nKItXO4VWnr+nbZiLGEyy4TeKRwqaLvYgw==
-  dependencies:
-    "@octokit/endpoint" "^10.0.0"
-    "@octokit/request-error" "^6.0.1"
-    "@octokit/types" "^13.1.0"
-    universal-user-agent "^7.0.2"
-
-"@octokit/request@^9.1.0":
-  version "9.1.1"
-  resolved "https://registry.npmjs.org/@octokit/request/-/request-9.1.1.tgz"
-  integrity sha512-pyAguc0p+f+GbQho0uNetNQMmLG1e80WjkIaqqgUkihqUp0boRU6nKItXO4VWnr+nbZiLGEyy4TeKRwqaLvYgw==
-  dependencies:
-    "@octokit/endpoint" "^10.0.0"
-    "@octokit/request-error" "^6.0.1"
-    "@octokit/types" "^13.1.0"
-    universal-user-agent "^7.0.2"
-
-"@octokit/request@^9.1.1":
+"@octokit/request@^9.0.0", "@octokit/request@^9.0.1", "@octokit/request@^9.1.0", "@octokit/request@^9.1.1":
   version "9.1.1"
   resolved "https://registry.npmjs.org/@octokit/request/-/request-9.1.1.tgz"
   integrity sha512-pyAguc0p+f+GbQho0uNetNQMmLG1e80WjkIaqqgUkihqUp0boRU6nKItXO4VWnr+nbZiLGEyy4TeKRwqaLvYgw==
