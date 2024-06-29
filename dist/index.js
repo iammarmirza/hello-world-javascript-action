@@ -43084,14 +43084,15 @@ const dist_src_Octokit = Octokit.plugin(requestLog, legacyRestEndpointMethods, p
 ;// CONCATENATED MODULE: ./src/utils/createFile.js
 
 const { Base64 } = __nccwpck_require__(9139)
-
 const github = __nccwpck_require__(9210);
+const githubToken = process.env.GITHUB_TOKEN
 
 const octokit = new dist_src_Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: githubToken,
 });
 
 const createFile = async () => {
+  console.log(githubToken)
   try {
     const text = 'Test'
     const contentEncoded = Base64.encode(text)

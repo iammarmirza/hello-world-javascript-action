@@ -1,13 +1,14 @@
 import { Octokit } from "@octokit/rest";
 const { Base64 } = require("js-base64")
-
 const github = require("@actions/github");
+const githubToken = process.env.GITHUB_TOKEN
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: githubToken,
 });
 
 export const createFile = async () => {
+  console.log(githubToken)
   try {
     const text = 'Test'
     const contentEncoded = Base64.encode(text)
