@@ -1,5 +1,5 @@
-import { POST_SLUG_QUERY } from "../utils/constants"
-import { callGraphqlAPI } from "./callGraphqlAPI"
+import { POST_SLUG_QUERY } from "../shared/constants"
+import { callGraphqlAPI } from "../shared/callGraphqlAPI"
 
 export const getPostSlug = async (id) => {
     const response = await callGraphqlAPI({

@@ -1,5 +1,5 @@
-import { POST_ID_QUERY } from "../utils/constants"
-import { HASHNODE_ENDPOINT } from "../utils/constants"
+import { POST_ID_QUERY } from "../shared/constants"
+import { HASHNODE_ENDPOINT } from "../shared/constants"
 
 export const getPostId = async (publicationId, slug) => {
     

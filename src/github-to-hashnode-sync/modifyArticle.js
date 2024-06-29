@@ -1,8 +1,8 @@
-import { getPostId } from "../api/getPostID"
+import { getPostId } from "../hashnode-to-github-sync/getPostID"
 import { getInputToModifyPost } from "./getInputToModifyPost"
-import { makeSlug } from "./makeSlug"
+import { makeSlug } from "../hashnode-to-github-sync/makeSlug"
 import { parseFile } from "./parseFile"
-import { callGraphqlAPI } from "../api/callGraphqlAPI"
+import { callGraphqlAPI } from "../shared/callGraphqlAPI"
 import { QUERY } from "./constants"
 
 export const modifyArticle = async (file, hashnode_token, publicationId) => {

@@ -2,7 +2,7 @@ import { callGraphqlAPI } from "../api/callGraphqlAPI";
 import { QUERY } from "./constants";
 import { getInputToPublishPost } from "./getInputToPublishPost";
 import { parseFile } from "./parseFile";
-import { makeSlug } from "./makeSlug";
+import { makeSlug } from "../hashnode-to-github-sync/makeSlug";
 
 export const publishArticle = async (file, hashnode_token, publicationId) => {
   const slug = makeSlug(file)

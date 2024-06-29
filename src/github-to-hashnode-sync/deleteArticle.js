@@ -1,8 +1,8 @@
-import { makeSlug } from "./makeSlug"
-import { getPostId } from "../api/getPostID"
+import { makeSlug } from "../hashnode-to-github-sync/makeSlug"
+import { getPostId } from "../hashnode-to-github-sync/getPostID"
 import { getInputToDeletePost } from "./getInputToDeletePost"
-import { QUERY } from "./constants"
-import { callGraphqlAPI } from "../api/callGraphqlAPI"
+import { QUERY } from "../shared/constants"
+import { callGraphqlAPI } from "../shared/callGraphqlAPI"
 
 export const deleteArticle = async (file, hashnode_token, publicationId) => {
     const slug = makeSlug(file)

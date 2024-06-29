@@ -1,4 +1,4 @@
-import { HASHNODE_ENDPOINT } from "../utils/constants"
+import { HASHNODE_ENDPOINT } from "./constants"
 
 export const callGraphqlAPI = async ({query, variables, token}) => {
     const response = await fetch(HASHNODE_ENDPOINT, {

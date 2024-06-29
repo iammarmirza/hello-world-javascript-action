@@ -1,5 +1,5 @@
-import { POST_DATA_QUERY } from "../utils/constants"
-import { callGraphqlAPI } from "./callGraphqlAPI"
+import { POST_DATA_QUERY } from "../shared/constants"
+import { callGraphqlAPI } from "../shared/callGraphqlAPI"
 
 export const getPostData = async (publicationId, postSlug) => {
     const data = await callGraphqlAPI({
