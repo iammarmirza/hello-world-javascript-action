@@ -35041,6 +35041,20 @@ __nccwpck_require__.d(__webpack_exports__, {
   "run": () => (/* binding */ run)
 });
 
+;// CONCATENATED MODULE: ./src/shared/getInput.js
+const core = __nccwpck_require__(3547);
+
+const getInput = () => {
+    const hashnode_event = core.getInput("hashnode_event");
+    const hashnode_token = core.getInput("hashnode_token");
+    const host = core.getInput("hashnode_host");
+    const added_files = core.getInput("added_files");
+    const modified_files = core.getInput("modified_files");
+    const deleted_files = core.getInput("deleted_files");
+    core.setSecret(hashnode_token);
+
+    return {hashnode_event, hashnode_token, host, added_files, modified_files, deleted_files}
+}
 ;// CONCATENATED MODULE: ./src/shared/constants.js
 const HASHNODE_ENDPOINT = "https://gql.hashnode.com";
 
@@ -35108,42 +35122,6 @@ const POST_DATA_QUERY = `query PostData ($id: ObjectId, $slug: String!) {
     }
   }
 }`
-;// CONCATENATED MODULE: ./src/shared/getPublicationId.js
-
-
-
-const getPublicationId = async (host) => {
-        const response = await fetch(HASHNODE_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-                Authorization: `${process.env.HASHNODE_KEY}`
-            },
-            body: JSON.stringify({
-                query: PUBLICATION_ID_QUERY,
-                variables: {
-                    host
-                }
-            })
-        })
-        
-        const data = await response.json()
-        return data.data.publication.id
-}
-;// CONCATENATED MODULE: ./src/shared/getInput.js
-const core = __nccwpck_require__(3547);
-
-const getInput = () => {
-    const hashnode_event = core.getInput("hashnode_event");
-    const hashnode_token = core.getInput("hashnode_token");
-    const host = core.getInput("hashnode_host");
-    const added_files = core.getInput("added_files");
-    const modified_files = core.getInput("modified_files");
-    const deleted_files = core.getInput("deleted_files");
-    core.setSecret(hashnode_token);
-
-    return {hashnode_event, hashnode_token, host, added_files, modified_files, deleted_files}
-}
 ;// CONCATENATED MODULE: ./src/shared/callGraphqlAPI.js
 
 
@@ -39006,12 +38984,40 @@ const deleteArticle = async (file, hashnode_token, publicationId) => {
 
     return response
 }
+;// CONCATENATED MODULE: ./src/shared/getPublicationId.js
+
+
+
+const getPublicationId = async (host) => {
+        const response = await fetch(HASHNODE_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                Authorization: `${process.env.HASHNODE_KEY}`
+            },
+            body: JSON.stringify({
+                query: PUBLICATION_ID_QUERY,
+                variables: {
+                    host
+                }
+            })
+        })
+        
+        const data = await response.json()
+        return data.data.publication.id
+}
 ;// CONCATENATED MODULE: ./src/github-to-hashnode-sync/githubSync.js
 
 
 
 
+
+
 const githubSync = async (added_files, modified_files, deleted_files) => {
+  const {hashnode_token, host} = getInput()
+
+  const publicationId = await getPublicationId(host)
+
   const added_files_arr = added_files
     .split(" ")
     .filter((file) => file.endsWith(".md"));
@@ -39041,21 +39047,17 @@ const githubSync = async (added_files, modified_files, deleted_files) => {
 
 
 
-
 const src_core = __nccwpck_require__(3547);
 
 async function run() {
   try {
     const {
       hashnode_event,
-      hashnode_token,
-      host,
       added_files,
       modified_files,
       deleted_files,
     } = getInput();
 
-    const publicationId = await getPublicationId(host);
     const parsedEvent = JSON.parse(hashnode_event);
 
     if (parsedEvent) hashnodeSync(parsedEvent);

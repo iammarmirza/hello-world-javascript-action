@@ -1,8 +1,14 @@
 import { publishArticle } from "./publishArticle";
 import { modifyArticle } from "./modifyArticle";
 import { deleteArticle } from "./deleteArticle"
+import { getInput } from "../shared/getInput";
+import { getPublicationId } from "../shared/getPublicationId";
 
 export const githubSync = async (added_files, modified_files, deleted_files) => {
+  const {hashnode_token, host} = getInput()
+
+  const publicationId = await getPublicationId(host)
+
   const added_files_arr = added_files
     .split(" ")
     .filter((file) => file.endsWith(".md"));
