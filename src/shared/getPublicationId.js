@@ -1,5 +1,4 @@
-import { HASHNODE_ENDPOINT } from "./constants"
-import { PUBLICATION_ID_QUERY } from "./constants"
+import { HASHNODE_ENDPOINT, PUBLICATION_ID_QUERY } from "./constants"
 
 export const getPublicationId = async (host) => {
         const response = await fetch(HASHNODE_ENDPOINT, {

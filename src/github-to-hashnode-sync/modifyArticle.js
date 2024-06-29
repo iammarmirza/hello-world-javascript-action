@@ -3,7 +3,7 @@ import { getInputToModifyPost } from "./getInputToModifyPost"
 import { makeSlug } from "../hashnode-to-github-sync/makeSlug"
 import { parseFile } from "./parseFile"
 import { callGraphqlAPI } from "../shared/callGraphqlAPI"
-import { QUERY } from "./constants"
+import { QUERY } from "../shared/constants"
 
 export const modifyArticle = async (file, hashnode_token, publicationId) => {
     const slug = makeSlug(file)
