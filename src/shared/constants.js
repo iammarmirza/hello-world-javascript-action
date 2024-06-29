@@ -1,6 +1,6 @@
-export const HASHNODE_ENDPOINT = "https://gql.hashnode.com";
+const HASHNODE_ENDPOINT = "https://gql.hashnode.com";
 
-export const QUERY = {
+const QUERY = {
   publish: `mutation PublishPost($input: PublishPostInput!) {
     publishPost(input: $input) {
       post {
@@ -28,13 +28,13 @@ export const QUERY = {
 }`,
 };
 
-export const PUBLICATION_ID_QUERY = `query findPublication ($host: String!) {
+const PUBLICATION_ID_QUERY = `query findPublication ($host: String!) {
   publication(host: $host) {
     id
   }
 }`;
 
-export const POST_ID_QUERY = `query Publication($id: ObjectId, $slug: String!) {
+const POST_ID_QUERY = `query Publication($id: ObjectId, $slug: String!) {
   publication(id: $id) {
     id
     post(slug: $slug) {
@@ -43,13 +43,13 @@ export const POST_ID_QUERY = `query Publication($id: ObjectId, $slug: String!) {
   }
 }`;
 
-export const POST_SLUG_QUERY = `query PostSlug ($id: ID!) {
+const POST_SLUG_QUERY = `query PostSlug ($id: ID!) {
   post(id: $id) {
     slug
   }
 }`
 
-export const POST_DATA_QUERY = `query PostData ($id: ObjectId, $slug: String!) {
+const POST_DATA_QUERY = `query PostData ($id: ObjectId, $slug: String!) {
   publication(id: $id) {
     post(slug: $slug) {
       id
@@ -64,3 +64,5 @@ export const POST_DATA_QUERY = `query PostData ($id: ObjectId, $slug: String!) {
     }
   }
 }`
+
+export {HASHNODE_ENDPOINT, QUERY, PUBLICATION_ID_QUERY, POST_ID_QUERY, POST_SLUG_QUERY, POST_DATA_QUERY}
