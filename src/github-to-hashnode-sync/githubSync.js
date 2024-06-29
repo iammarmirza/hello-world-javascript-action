@@ -1,3 +1,7 @@
+import { publishArticle } from "./publishArticle";
+import { modifyArticle } from "./modifyArticle";
+import { deleteArticle } from "./deleteArticle"
+
 export const githubSync = async (added_files, modified_files, deleted_files) => {
   const added_files_arr = added_files
     .split(" ")

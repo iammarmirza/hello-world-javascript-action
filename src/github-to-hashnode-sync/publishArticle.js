@@ -1,4 +1,4 @@
-import { callGraphqlAPI } from "../api/callGraphqlAPI";
+import { callGraphqlAPI } from "../shared/callGraphqlAPI";
 import { QUERY } from "./constants";
 import { getInputToPublishPost } from "./getInputToPublishPost";
 import { parseFile } from "./parseFile";

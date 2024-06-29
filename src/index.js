@@ -1,9 +1,6 @@
 import { getPublicationId } from "./shared/getPublicationId";
 import { getInput } from "./shared/getInput";
-import { deleteArticle } from "./github-to-hashnode-sync/deleteArticle";
 import { hashnodeSync } from "./hashnode-to-github-sync/hashnodeSync";
-import { modifyArticle } from "./github-to-hashnode-sync/modifyArticle";
-import { publishArticle } from "./github-to-hashnode-sync/publishArticle";
 import { githubSync } from "./github-to-hashnode-sync/githubSync";
 const core = require("@actions/core");
 

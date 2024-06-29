@@ -1,4 +1,4 @@
-import { getPostSlug } from "../api/getPostSlug";
+import { getPostSlug } from "./getPostSlug";
 import { deleteSync } from "./deleteSync";
 import { modifySync } from "./modifySync";
 import { publishSync } from "./publishSync"
